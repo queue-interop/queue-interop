@@ -1,6 +1,6 @@
 <?php
 
-namespace Enqueue\Psr;
+namespace Interop\Queue;
 
 /**
  * A Destination object encapsulates a provider-specific address.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Enqueue\Psr;
+namespace Interop\Queue;
 
 /**
  * A client uses a MessageConsumer object to receive messages from a destination.

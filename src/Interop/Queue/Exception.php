@@ -1,6 +1,6 @@
 <?php
 
-namespace Enqueue\Psr;
+namespace Interop\Queue;
 
 /**
  * This is the root class of all transport's exceptions.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Enqueue\Psr;
+namespace Interop\Queue;
 
 /**
  * A Queue object encapsulates a provider-specific queue name.

@@ -1,6 +1,6 @@
 <?php
 
-namespace Enqueue\Psr;
+namespace Interop\Queue;
 
 /**
  * The Message interface is the root interface of all transport messages.
