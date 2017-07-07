@@ -1,0 +1,18 @@
+{
+    "name": "queue-interop/queue-interop",
+    "type": "library",
+    "description": "Promoting the interoperability of MQs objects. Based on Java JMS",
+    "keywords": ["messaging", "queue", "jms", "mq", "message queue"],
+    "homepage": "https://github.com/queue-interop/queue-interop",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Interop\\Queue\\": "src/Interop/Queue/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.5.x-dev"
+        }
+    }
+}
