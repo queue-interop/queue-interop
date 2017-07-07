@@ -16,6 +16,11 @@ namespace Interop\Queue;
 interface PsrMessage
 {
     /**
+     * The message producer's default delivery delay is zero.
+     */
+    const DEFAULT_DELIVERY_DELAY = .0;
+
+    /**
      * @return string
      */
     public function getBody();
