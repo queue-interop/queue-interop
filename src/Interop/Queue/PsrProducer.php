@@ -5,16 +5,6 @@ namespace Interop\Queue;
 interface PsrProducer
 {
     /**
-     * @param CompletionListener $listener
-     */
-    public function setCompletionListener(CompletionListener $listener = null);
-
-    /**
-     * @return CompletionListener|null
-     */
-    public function getCompletionListener();
-
-    /**
      * Gets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
      *
      * @return float
