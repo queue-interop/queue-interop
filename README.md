@@ -27,9 +27,18 @@ composer require queue-interop/queue-interop
 
 ## Compatible projects
 
-### Projects implementing queue interop interfaces:
+### Implementations
 
-- [Enqueue](https://github.com/php-enqueue/enqueue-dev) 
+* [enqueue/amqp](https://github.com/php-enqueue/amqp-ext)
+* [enqueue/beanstalk](https://github.com/php-enqueue/beanstalk)
+* [enqueue/stomp](https://github.com/php-enqueue/stomp)
+* [enqueue/sqs](https://github.com/php-enqueue/sqs)
+* [enqueue/rdkafka](https://github.com/php-enqueue/rdkafka)
+* [enqueue/redis](https://github.com/php-enqueue/redis)
+* [enqueue/gearman](https://github.com/php-enqueue/gearman)
+* [enqueue/dbal](https://github.com/php-enqueue/dbal)
+* [enqueue/fs](https://github.com/php-enqueue/fs)
+* [enqueue/null](https://github.com/php-enqueue/null).
 
 ## Workflow
 
