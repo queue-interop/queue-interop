@@ -16,6 +16,22 @@ namespace Interop\Queue;
 interface PsrMessage
 {
     /**
+     * The message producer's default delivery delay is zero.
+     */
+    const DEFAULT_DELIVERY_DELAY = 0;
+
+    /**
+     * The message producer's default priority is 4.
+     */
+    const DEFAULT_PRIORITY = 4;
+
+    /**
+     * The message producer's default delivery delay is zero.
+     */
+    const DEFAULT_TIME_TO_LIVE = 0;
+
+
+    /**
      * @return string
      */
     public function getBody();
