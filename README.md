@@ -30,7 +30,7 @@ composer require queue-interop/queue-interop
 ### Implementations
 
 * [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
-* [enqueue/beanstalk](https://github.com/php-enqueue/beanstalk)
+* [enqueue/pheanstalk](https://github.com/php-enqueue/pheanstalk)
 * [enqueue/stomp](https://github.com/php-enqueue/stomp)
 * [enqueue/sqs](https://github.com/php-enqueue/sqs)
 * [enqueue/rdkafka](https://github.com/php-enqueue/rdkafka)
