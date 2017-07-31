@@ -30,6 +30,7 @@ composer require queue-interop/queue-interop
 ### Implementations
 
 * [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
+* [enqueue/amqp-lib](https://github.com/php-enqueue/amqp-lib)
 * [enqueue/pheanstalk](https://github.com/php-enqueue/pheanstalk)
 * [enqueue/stomp](https://github.com/php-enqueue/stomp)
 * [enqueue/sqs](https://github.com/php-enqueue/sqs)
@@ -39,6 +40,21 @@ composer require queue-interop/queue-interop
 * [enqueue/dbal](https://github.com/php-enqueue/dbal)
 * [enqueue/fs](https://github.com/php-enqueue/fs)
 * [enqueue/null](https://github.com/php-enqueue/null).
+
+## Amqp interop
+
+There is AMQP interop built on top of queue interop. It is completly compatible with queue interop and only adds some AMQP specific features. 
+
+### Installation
+
+```bash
+composer require queue-interop/amqp-interop
+```
+
+### Compatible projects
+
+* [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
+* [enqueue/amqp-lib](https://github.com/php-enqueue/amqp-lib)
 
 ## Workflow
 
