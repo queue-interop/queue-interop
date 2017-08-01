@@ -27,6 +27,11 @@ composer require queue-interop/queue-interop
 
 ## Compatible projects
 
+### Projects
+
+* [Enqueue](https://github.com/php-enqueue/enqueue-dev)
+* [Swarrot](https://github.com/swarrot/swarrot)
+
 ### Implementations
 
 * [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
@@ -40,6 +45,7 @@ composer require queue-interop/queue-interop
 * [enqueue/dbal](https://github.com/php-enqueue/dbal)
 * [enqueue/fs](https://github.com/php-enqueue/fs)
 * [enqueue/null](https://github.com/php-enqueue/null).
+* [zogwarg/enqueue-elasticsearch](https://github.com/zogwarg/enqueue-elasticsearch)
 
 ## Amqp interop
 
