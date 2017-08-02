@@ -29,7 +29,7 @@ interface PsrProducer
     /**
      * Gets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
      *
-     * @return int|float the delivery delay in milliseconds.
+     * @return int|float|null the delivery delay in milliseconds.
      */
     public function getDeliveryDelay();
 
@@ -50,7 +50,7 @@ interface PsrProducer
     /**
      * Return the priority of messages that are sent using this Producer
      *
-     * @return int the message priority
+     * @return int|null the message priority
      */
     public function getPriority();
 
@@ -74,7 +74,7 @@ interface PsrProducer
     /**
      * Returns the time to live of messages that are sent using this JMSProducer.
      *
-     * @return int|float the message time to live in milliseconds; a value of zero means that a message never expires.
+     * @return int|float|null the message time to live in milliseconds; a value of zero means that a message never expires.
      */
     public function getTimeToLive();
 }
