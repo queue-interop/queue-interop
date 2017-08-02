@@ -16,9 +16,13 @@ interface PsrProducer
 
     /**
      * Sets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
-     * deliveryDelay is set to zero by default.
+     * deliveryDelay is set to null default.
      *
-     * @param float|int $deliveryDelay - the delivery delay in milliseconds.
+     * @param float|int|null $deliveryDelay - the delivery delay in milliseconds. Use null to unset delivery delay and use transport's mode
+     *
+     * @throws DeliveryDelayNotSupportedException if producer does not support delivery delay feature
+     *
+     * @return self
      */
     public function setDeliveryDelay($deliveryDelay);
 
@@ -33,9 +37,13 @@ interface PsrProducer
      * Specifies the priority of messages that are sent using this Producer
      * The API defines ten levels of priority value, with 0 as the lowest priority and 9 as the highest.
      * Clients should consider priorities 0-4 as gradations of normal priority and priorities 5-9 as gradations of expedited priority.
-     * Priority is set to 4 by default.
+     * Priority is set to null by default.
      *
-     * @param int $priority
+     * @param int|null $priority Use null to unset priority and use transport's mode
+     *
+     * @throws PriorityNotSupportedException if producer does not support priority feature
+     *
+     * @return self
      */
     public function setPriority($priority);
 
@@ -53,8 +61,13 @@ interface PsrProducer
      * Clients should not receive messages that have expired; however, This interop does not guarantee that this will not happen.
      * A provider should do its best to accurately expire messages; however, it does not define the accuracy provided.
      * It is not acceptable to simply ignore time-to-live.
+     * timeToLive is set to null default.
      *
-     * @param int|float $timeToLive the message time to live to be used, in milliseconds; a value of zero means that a message never expires.
+     * @param int|float|null $timeToLive the message time to live to be used, in milliseconds; a value of zero means that a message never expires. Use null to unset time to live and use transport's mode
+     *
+     * @throws TimeToLiveNotSupportedException if producer does not support time to live feature
+     *
+     * @return self
      */
     public function setTimeToLive($timeToLive);
 
