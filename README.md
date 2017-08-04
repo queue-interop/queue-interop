@@ -36,6 +36,7 @@ composer require queue-interop/queue-interop
 
 * [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
 * [enqueue/amqp-lib](https://github.com/php-enqueue/amqp-lib)
+* [enqueue/amqp-bunny](https://github.com/php-enqueue/amqp-bunny)
 * [enqueue/pheanstalk](https://github.com/php-enqueue/pheanstalk)
 * [enqueue/stomp](https://github.com/php-enqueue/stomp)
 * [enqueue/sqs](https://github.com/php-enqueue/sqs)
@@ -61,6 +62,7 @@ composer require queue-interop/amqp-interop
 
 * [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
 * [enqueue/amqp-lib](https://github.com/php-enqueue/amqp-lib)
+* [enqueue/amqp-bunny](https://github.com/php-enqueue/amqp-bunny)
 
 ## Workflow
 
