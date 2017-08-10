@@ -5,6 +5,9 @@
     "keywords": ["messaging", "queue", "jms", "mq", "message queue"],
     "homepage": "https://github.com/queue-interop/queue-interop",
     "license": "MIT",
+    "require": {
+        "php": ">=5.5"
+    },
     "autoload": {
         "psr-4": {
             "Interop\\Queue\\": "src/"
