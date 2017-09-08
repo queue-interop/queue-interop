@@ -31,6 +31,7 @@ composer require queue-interop/queue-interop
 
 * [Enqueue](https://github.com/php-enqueue/enqueue-dev)
 * [Swarrot](https://github.com/swarrot/swarrot)
+* [Bernard](https://github.com/bernardphp/bernard)
 
 ### Implementations
 
