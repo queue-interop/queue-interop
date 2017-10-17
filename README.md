@@ -52,7 +52,7 @@ composer require queue-interop/queue-interop
 
 ## Amqp interop
 
-There is AMQP interop built on top of queue interop. It is completly compatible with queue interop and only adds some AMQP specific features. 
+There is [AMQP interop](https://packagist.org/packages/queue-interop/amqp-interop) built on top of queue interop. It is completly compatible with queue interop and only adds some AMQP specific features. 
 
 ### Installation
 
