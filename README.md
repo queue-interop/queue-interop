@@ -33,6 +33,7 @@ composer require queue-interop/queue-interop
 * [Swarrot](https://github.com/swarrot/swarrot)
 * [Bernard](https://github.com/bernardphp/bernard)
 * [vladimir-yuldashev/laravel-queue-rabbitmq](https://packagist.org/packages/vladimir-yuldashev/laravel-queue-rabbitmq)
+* [sonata-project/notification-bundle](https://github.com/sonata-project/SonataNotificationBundle)
 
 ### Implementations
 
