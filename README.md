@@ -66,9 +66,9 @@ composer require queue-interop/amqp-interop
 
 ### Compatible projects
 
-* [enqueue/amqp-ext](https://github.com/php-enqueue/amqp-ext)
-* [enqueue/amqp-lib](https://github.com/php-enqueue/amqp-lib)
-* [enqueue/amqp-bunny](https://github.com/php-enqueue/amqp-bunny)
+* [enqueue/amqp-ext](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp.md)
+* [enqueue/amqp-lib](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp_lib.md)
+* [enqueue/amqp-bunny](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp_bunny.md)
 
 ## Workflow
 
