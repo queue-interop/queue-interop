@@ -58,7 +58,7 @@ composer require queue-interop/queue-interop
 
 * [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
 * [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
-* [RabbitMQ's official tutorial adopted by AMQP Iterop](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop).
+* [RabbitMQ's official tutorials](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop) ported to AMQP Interop.
 
 ## Amqp interop
 
