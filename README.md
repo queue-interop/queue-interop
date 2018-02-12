@@ -51,14 +51,13 @@ composer require queue-interop/queue-interop
 * [enqueue/redis](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/redis.md)
 * [enqueue/gearman](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/gearman.md)
 * [enqueue/dbal](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/dbal.md)
-* [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/fs.md)
+* [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/filesystem.md)
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
-* [zogwarg/enqueue-elasticsearch](https://github.com/zogwarg/enqueue-elasticsearch.md)
 
 ### Examples
 
 * [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
-* [Formapro's Blog](blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
+* [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
 * [RabbitMQ's official tutorial adopted by AMQP Iterop](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop).
 
 ## Amqp interop
