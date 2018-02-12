@@ -27,6 +27,53 @@ You can install this package through Composer:
 composer require queue-interop/queue-interop
 ```
 
+## Examples
+
+Send a message:
+
+```php
+<?php
+
+$factory = new AcmeConnectionFactory('acme://');
+
+$context = $factory->createContext();
+$queue = $context->createQueue();
+$message = $context->createMessage('aBody');
+
+$context->createProducer()->send($queue, $message);
+```
+
+Consume a message:
+
+```php
+<?php
+
+$factory = new AcmeConnectionFactory('acme://');
+
+$context = $factory->createContext();
+$queue = $context->createQueue();
+$consumer = $consumer->createConsumer($queue);
+
+if ($message = $consumer->receiveNoWait()) {
+    $consumer->acknowledge($message);
+}
+
+// or 
+
+$timeout = 5000; // 5sec
+if ($message = $consumer->receive($timeout)) {
+    $consumer->acknowledge($message);
+}
+```
+
+Find out more here:
+
+* [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
+* [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
+* [RabbitMQ's official tutorials](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop) ported to AMQP Interop.
+
+
+
 ## Compatible projects
 
 ### Projects
@@ -53,12 +100,6 @@ composer require queue-interop/queue-interop
 * [enqueue/dbal](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/dbal.md)
 * [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/filesystem.md)
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
-
-### Examples
-
-* [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
-* [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
-* [RabbitMQ's official tutorials](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop) ported to AMQP Interop.
 
 ## Amqp interop
 
