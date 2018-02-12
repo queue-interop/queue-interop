@@ -37,10 +37,11 @@ Send a message:
 $factory = new AcmeConnectionFactory('acme://');
 
 $context = $factory->createContext();
-$queue = $context->createQueue();
-$message = $context->createMessage('aBody');
 
-$context->createProducer()->send($queue, $message);
+$context->createProducer()->send(
+    $context->createQueue('aQueue'), 
+    $context->createMessage('aBody')
+);
 ```
 
 Consume a message:
@@ -51,11 +52,13 @@ Consume a message:
 $factory = new AcmeConnectionFactory('acme://');
 
 $context = $factory->createContext();
-$queue = $context->createQueue();
-$consumer = $consumer->createConsumer($queue);
+$consumer = $consumer->createConsumer($context->createQueue('aQueue));
 
 if ($message = $consumer->receiveNoWait()) {
     $consumer->acknowledge($message);
+
+    // reject on fail
+    // $consumer->reject($message);
 }
 
 // or 
