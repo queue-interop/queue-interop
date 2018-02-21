@@ -52,7 +52,7 @@ Consume a message:
 $factory = new AcmeConnectionFactory('acme://');
 
 $context = $factory->createContext();
-$consumer = $consumer->createConsumer($context->createQueue('aQueue));
+$consumer = $consumer->createConsumer($context->createQueue('aQueue'));
 
 if ($message = $consumer->receiveNoWait()) {
     $consumer->acknowledge($message);
