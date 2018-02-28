@@ -1,6 +1,6 @@
 <?php
 
-namespace Interop\Queue;
+namespace Interop\Queue\Exception;
 
 /**
  * This is the root class of all transport's exceptions.
