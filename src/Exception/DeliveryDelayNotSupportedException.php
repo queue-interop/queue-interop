@@ -1,8 +1,8 @@
 <?php
 
-namespace Interop\Queue;
+namespace Interop\Queue\Exception;
 
-class PriorityNotSupportedException extends Exception
+class DeliveryDelayNotSupportedException extends Exception
 {
     /**
      * @param int $code
@@ -12,6 +12,6 @@ class PriorityNotSupportedException extends Exception
      */
     public static function providerDoestNotSupportIt($code = 0, $previous = null)
     {
-        return new static('The provider does not support priority feature', $code, $previous);
+        return new static('The provider does not support delivery delay feature', $code, $previous);
     }
 }

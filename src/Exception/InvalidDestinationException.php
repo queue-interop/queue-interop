@@ -1,6 +1,6 @@
 <?php
 
-namespace Interop\Queue;
+namespace Interop\Queue\Exception;
 
 class InvalidDestinationException extends Exception
 {
