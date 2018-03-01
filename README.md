@@ -24,7 +24,8 @@ this project will pave the way for one or more future PSRs.
 You can install this package through Composer:
 
 ```bash
-composer require queue-interop/queue-interop
+# Install a Queue Interop compatible transport, for example 
+$ composer require enqueue/fs
 ```
 
 ## Examples
@@ -34,9 +35,9 @@ Send a message:
 ```php
 <?php
 
-$factory = new AcmeConnectionFactory('acme://');
+use Enqueue\Fs\FsConnectionFactory;
 
-$context = $factory->createContext();
+$context = (new FsConnectionFactory())->createContext();
 
 $context->createProducer()->send(
     $context->createQueue('aQueue'), 
@@ -49,22 +50,16 @@ Consume a message:
 ```php
 <?php
 
-$factory = new AcmeConnectionFactory('acme://');
+use Enqueue\Fs\FsConnectionFactory;
 
-$context = $factory->createContext();
+$context = (new FsConnectionFactory())->createContext();
+
 $consumer = $consumer->createConsumer($context->createQueue('aQueue'));
-
-if ($message = $consumer->receiveNoWait()) {
-    $consumer->acknowledge($message);
-
-    // reject on fail
-    // $consumer->reject($message);
-}
-
-// or 
 
 $timeout = 5000; // 5sec
 if ($message = $consumer->receive($timeout)) {
+    // process the message.
+
     $consumer->acknowledge($message);
 }
 ```
@@ -115,13 +110,12 @@ It is time to settle a date of a stable release and possibly some intermediate s
 
 ## Amqp interop
 
-There is [AMQP interop](https://packagist.org/packages/queue-interop/amqp-interop) built on top of queue interop. It is completly compatible with queue interop and only adds some AMQP specific features. 
+There is [AMQP interop](https://packagist.org/packages/queue-interop/amqp-interop) built on top of Queue Interop. It is completly compatible with queue interop and only adds some AMQP specific features:
 
-### Installation
-
-```bash
-composer require queue-interop/amqp-interop
-```
+* Queue\Exchange declaration
+* Queue\Exchange Binding.
+* Basic consume support. 
+* and other AMQP specific features.
 
 ### Compatible projects
 
