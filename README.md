@@ -19,6 +19,16 @@ implementations. This facilitates a high-level of interoperability and flexibili
 The work done in this project is not officially endorsed by the [PHP-FIG](http://www.php-fig.org/). We adhere to the spirit and ideals of PHP-FIG, and hope
 this project will pave the way for one or more future PSRs.
 
+## Roadmap
+
+The Queue Interop project started in the summer of 2016, almost two years ago. Since then It has been well-tried by many developers. A lot of companies use it in production.
+
+It is time to settle a date of a stable release and possibly some intermediate steps towards it:
+
+* The 1.0 will be released in December 2018.
+* The 1.0-beta1 will be released in August 2018.
+* The 1.0-alpha1 will be released in March 2018.
+
 ## Installation
 
 You can install this package through Composer:
@@ -69,17 +79,6 @@ Find out more here:
 * [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
 * [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
 * [RabbitMQ's official tutorials](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop) ported to AMQP Interop.
-
-## Roadmap
-
-The Queue Interop project started in the summer of 2016, almost two years ago. Since then It has been well-tried by many developers. A lot of companies use it in production.
-
-It is time to settle a date of a stable release and possibly some intermediate steps towards it:
-
-* The 1.0 will be released in December 2018.
-* The 1.0-beta1 will be released in August 2018.
-* The 1.0-alpha1 will be released in March 2018.
-
 
 ## Compatible projects
 
