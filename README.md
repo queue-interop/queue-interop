@@ -27,7 +27,7 @@ It is time to settle a date of a stable release and possibly some intermediate s
 
 * The 1.0 will be released in December 2018.
 * The 1.0-beta1 will be released in August 2018.
-* The 1.0-alpha1 will be released in March 2018.
+* The [1.0-alpha1](https://github.com/queue-interop/queue-interop/releases/tag/1.0.0-alpha1) will be released in March 2018.
 
 ## Installation
 
