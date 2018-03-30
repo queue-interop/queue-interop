@@ -17,7 +17,7 @@ interface PsrProcessor
 
     /**
      * Use this constant when the message is not valid or could not be processed right now but we can try again later
-     * The original message is removed from the queue but a copy is publsihed to the queue again.
+     * The original message is removed from the queue but a copy is published to the queue again.
      */
     const REQUEUE = 'enqueue.requeue';
 
