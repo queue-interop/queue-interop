@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -18,28 +19,28 @@ interface PsrMessage
     /**
      * @return string
      */
-    public function getBody();
+    public function getBody(): string;
 
     /**
      * @param string $body
      */
-    public function setBody($body);
+    public function setBody(string $body): void;
 
     /**
      * @param array $properties
      */
-    public function setProperties(array $properties);
+    public function setProperties(array $properties): void;
 
     /**
      * @return array [name => value, ...]
      */
-    public function getProperties();
+    public function getProperties(): array;
 
     /**
      * @param string $name
      * @param mixed  $value
      */
-    public function setProperty($name, $value);
+    public function setProperty(string $name, $value): void;
 
     /**
      * @param string $name
@@ -47,23 +48,23 @@ interface PsrMessage
      *
      * @return mixed
      */
-    public function getProperty($name, $default = null);
+    public function getProperty(string $name, $default = null);
 
     /**
      * @param array $headers
      */
-    public function setHeaders(array $headers);
+    public function setHeaders(array $headers): void;
 
     /**
      * @return array [name => value, ...]
      */
-    public function getHeaders();
+    public function getHeaders(): array;
 
     /**
      * @param string $name
      * @param mixed  $value
      */
-    public function setHeader($name, $value);
+    public function setHeader(string $name, $value): void;
 
     /**
      * @param string $name
@@ -71,12 +72,12 @@ interface PsrMessage
      *
      * @return mixed
      */
-    public function getHeader($name, $default = null);
+    public function getHeader(string $name, $default = null);
 
     /**
      * @param bool $redelivered
      */
-    public function setRedelivered($redelivered);
+    public function setRedelivered(bool $redelivered): void;
 
     /**
      * Gets an indication of whether this message is being redelivered.
@@ -86,7 +87,7 @@ interface PsrMessage
      *
      * @return bool
      */
-    public function isRedelivered();
+    public function isRedelivered(): bool;
 
     /**
      * Sets the correlation ID for the message.
@@ -97,7 +98,7 @@ interface PsrMessage
      *
      * @throws Exception if the provider fails to set the correlation ID due to some internal error
      */
-    public function setCorrelationId($correlationId);
+    public function setCorrelationId(string $correlationId = null): void;
 
     /**
      * Gets the correlation ID for the message.
@@ -108,7 +109,7 @@ interface PsrMessage
      *
      * @return string
      */
-    public function getCorrelationId();
+    public function getCorrelationId(): ?string;
 
     /**
      * Sets the message ID.
@@ -119,7 +120,7 @@ interface PsrMessage
      *
      * @throws Exception if the provider fails to set the message ID due to some internal error
      */
-    public function setMessageId($messageId);
+    public function setMessageId(string $messageId = null): void;
 
     /**
      * Gets the message Id.
@@ -131,7 +132,7 @@ interface PsrMessage
      *
      * @return string
      */
-    public function getMessageId();
+    public function getMessageId(): ?string;
 
     /**
      * Gets the message timestamp.
@@ -141,7 +142,7 @@ interface PsrMessage
      *
      * @return int
      */
-    public function getTimestamp();
+    public function getTimestamp(): ?int;
 
     /**
      * Sets the message timestamp.
@@ -152,7 +153,7 @@ interface PsrMessage
      *
      * @throws Exception if the provider fails to set the timestamp due to some internal error
      */
-    public function setTimestamp($timestamp);
+    public function setTimestamp(int $timestamp = null): void;
 
     /**
      * Sets the destination to which a reply to this message should be sent.
@@ -167,12 +168,12 @@ interface PsrMessage
      *
      * @param string|null $replyTo
      */
-    public function setReplyTo($replyTo);
+    public function setReplyTo(string $replyTo = null): void;
 
     /**
      * Gets the destination to which a reply to this message should be sent.
      *
      * @return string|null
      */
-    public function getReplyTo();
+    public function getReplyTo(): ?string;
 }

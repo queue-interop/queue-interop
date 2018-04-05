@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -16,5 +17,5 @@ interface PsrTopic extends PsrDestination
      *
      * @return string
      */
-    public function getTopicName();
+    public function getTopicName(): string;
 }

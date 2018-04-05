@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -10,7 +11,7 @@ class InvalidMessageException extends Exception
      *
      * @throws static
      */
-    public static function assertMessageInstanceOf(PsrMessage $message, $class)
+    public static function assertMessageInstanceOf(PsrMessage $message, string $class): void
     {
         if (!$message instanceof $class) {
             throw new static(sprintf(

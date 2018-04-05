@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -12,26 +13,26 @@ interface PsrProducer
      * @throws InvalidDestinationException if a client uses this method with an invalid destination
      * @throws InvalidMessageException     if an invalid message is specified
      */
-    public function send(PsrDestination $destination, PsrMessage $message);
+    public function send(PsrDestination $destination, PsrMessage $message): void;
 
     /**
      * Sets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
      * deliveryDelay is set to null default.
      *
-     * @param float|int|null $deliveryDelay - the delivery delay in milliseconds. Use null to unset delivery delay and use transport's mode
+     * @param int|null $deliveryDelay - the delivery delay in milliseconds. Use null to unset delivery delay and use transport's mode
      *
      * @throws DeliveryDelayNotSupportedException if producer does not support delivery delay feature
      *
      * @return self
      */
-    public function setDeliveryDelay($deliveryDelay);
+    public function setDeliveryDelay(int $deliveryDelay = null): self;
 
     /**
      * Gets the minimum length of time in milliseconds that must elapse after a message is sent before the provider may deliver the message to a consumer.
      *
      * @return int|float|null the delivery delay in milliseconds.
      */
-    public function getDeliveryDelay();
+    public function getDeliveryDelay(): ?int;
 
     /**
      * Specifies the priority of messages that are sent using this Producer
@@ -45,14 +46,14 @@ interface PsrProducer
      *
      * @return self
      */
-    public function setPriority($priority);
+    public function setPriority(int $priority = null): self;
 
     /**
      * Return the priority of messages that are sent using this Producer
      *
      * @return int|null the message priority
      */
-    public function getPriority();
+    public function getPriority(): ?int;
 
     /**
      * Specifies the time to live of messages that are sent using this Producer.
@@ -69,12 +70,12 @@ interface PsrProducer
      *
      * @return self
      */
-    public function setTimeToLive($timeToLive);
+    public function setTimeToLive(int $timeToLive = null): self;
 
     /**
      * Returns the time to live of messages that are sent using this JMSProducer.
      *
      * @return int|float|null the message time to live in milliseconds; a value of zero means that a message never expires.
      */
-    public function getTimeToLive();
+    public function getTimeToLive(): ?int;
 }

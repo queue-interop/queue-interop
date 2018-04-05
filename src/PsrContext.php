@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -11,21 +12,21 @@ interface PsrContext
      *
      * @return PsrMessage
      */
-    public function createMessage($body = '', array $properties = [], array $headers = []);
+    public function createMessage(string $body = '', array $properties = [], array $headers = []): PsrMessage;
 
     /**
      * @param string $topicName
      *
      * @return PsrTopic
      */
-    public function createTopic($topicName);
+    public function createTopic(string $topicName): PsrTopic;
 
     /**
      * @param string $queueName
      *
      * @return PsrQueue
      */
-    public function createQueue($queueName);
+    public function createQueue(string $queueName): PsrQueue;
 
     /**
      * Create temporary queue.
@@ -34,19 +35,19 @@ interface PsrContext
      *
      * @return PsrQueue
      */
-    public function createTemporaryQueue();
+    public function createTemporaryQueue(): PsrQueue;
 
     /**
      * @return PsrProducer
      */
-    public function createProducer();
+    public function createProducer(): PsrProducer;
 
     /**
      * @param PsrDestination $destination
      *
      * @return PsrConsumer
      */
-    public function createConsumer(PsrDestination $destination);
+    public function createConsumer(PsrDestination $destination): PsrConsumer;
 
-    public function close();
+    public function close(): void;
 }

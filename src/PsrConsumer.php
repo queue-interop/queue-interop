@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -16,7 +17,7 @@ interface PsrConsumer
      *
      * @return PsrQueue
      */
-    public function getQueue();
+    public function getQueue(): PsrQueue;
 
     /**
      * Receives the next message that arrives within the specified timeout interval.
@@ -27,21 +28,21 @@ interface PsrConsumer
      *
      * @return PsrMessage|null
      */
-    public function receive($timeout = 0);
+    public function receive(int $timeout = 0): ?PsrMessage;
 
     /**
      * Receives the next message if one is immediately available.
      *
      * @return PsrMessage|null
      */
-    public function receiveNoWait();
+    public function receiveNoWait(): ?PsrMessage;
 
     /**
      * Tell the MQ broker that the message was processed successfully.
      *
      * @param PsrMessage $message
      */
-    public function acknowledge(PsrMessage $message);
+    public function acknowledge(PsrMessage $message): void;
 
     /**
      * Tell the MQ broker that the message was rejected.
@@ -49,5 +50,5 @@ interface PsrConsumer
      * @param PsrMessage $message
      * @param bool       $requeue
      */
-    public function reject(PsrMessage $message, $requeue = false);
+    public function reject(PsrMessage $message, bool $requeue = false): void;
 }
