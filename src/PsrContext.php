@@ -49,5 +49,12 @@ interface PsrContext
      */
     public function createConsumer(PsrDestination $destination): PsrConsumer;
 
+    /**
+     * @throws SubscriptionConsumerNotSupportedException
+     *
+     * @return PsrSubscriptionConsumer
+     */
+    public function createSubscriptionConsumer(): PsrSubscriptionConsumer;
+
     public function close(): void;
 }
