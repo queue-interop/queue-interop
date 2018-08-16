@@ -56,5 +56,12 @@ interface PsrContext
      */
     public function createSubscriptionConsumer(): PsrSubscriptionConsumer;
 
+    /**
+     * @param PsrQueue $queue
+     *
+     * @throws PurgeQueueNotSupportedException
+     */
+    public function purgeQueue(PsrQueue $queue): void;
+
     public function close(): void;
 }
