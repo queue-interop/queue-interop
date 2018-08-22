@@ -14,8 +14,6 @@ interface PsrConsumer
 {
     /**
      * Gets the Queue associated with this queue receiver.
-     *
-     * @return PsrQueue
      */
     public function getQueue(): PsrQueue;
 
@@ -24,31 +22,22 @@ interface PsrConsumer
      * This call blocks until a message arrives, the timeout expires, or this message consumer is closed.
      * A timeout of zero never expires, and the call blocks indefinitely.
      *
-     * @param int $timeout the timeout value (in milliseconds)
-     *
-     * @return PsrMessage|null
+     * Timeout is in milliseconds
      */
     public function receive(int $timeout = 0): ?PsrMessage;
 
     /**
      * Receives the next message if one is immediately available.
-     *
-     * @return PsrMessage|null
      */
     public function receiveNoWait(): ?PsrMessage;
 
     /**
      * Tell the MQ broker that the message was processed successfully.
-     *
-     * @param PsrMessage $message
      */
     public function acknowledge(PsrMessage $message): void;
 
     /**
      * Tell the MQ broker that the message was rejected.
-     *
-     * @param PsrMessage $message
-     * @param bool       $requeue
      */
     public function reject(PsrMessage $message, bool $requeue = false): void;
 }

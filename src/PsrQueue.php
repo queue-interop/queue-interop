@@ -14,8 +14,6 @@ interface PsrQueue extends PsrDestination
 {
     /**
      * Gets the name of this queue. This is a destination one consumes messages from.
-     *
-     * @return string
      */
     public function getQueueName(): string;
 }
