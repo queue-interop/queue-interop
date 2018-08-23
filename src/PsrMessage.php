@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -15,144 +16,85 @@ namespace Interop\Queue;
  */
 interface PsrMessage
 {
-    /**
-     * @return string
-     */
-    public function getBody();
+    public function getBody(): string;
+
+    public function setBody(string $body): void;
+
+    public function setProperties(array $properties): void;
 
     /**
-     * @param string $body
+     * Returns [name => value, ...]
      */
-    public function setBody($body);
+    public function getProperties(): array;
+
+    public function setProperty(string $name, $value): void;
+
+    public function getProperty(string $name, $default = null);
+
+    public function setHeaders(array $headers): void;
 
     /**
-     * @param array $properties
+     * Returns [name => value, ...]
      */
-    public function setProperties(array $properties);
+    public function getHeaders(): array;
 
-    /**
-     * @return array [name => value, ...]
-     */
-    public function getProperties();
+    public function setHeader(string $name, $value): void;
 
-    /**
-     * @param string $name
-     * @param mixed  $value
-     */
-    public function setProperty($name, $value);
+    public function getHeader(string $name, $default = null);
 
-    /**
-     * @param string $name
-     * @param mixed  $default
-     *
-     * @return mixed
-     */
-    public function getProperty($name, $default = null);
-
-    /**
-     * @param array $headers
-     */
-    public function setHeaders(array $headers);
-
-    /**
-     * @return array [name => value, ...]
-     */
-    public function getHeaders();
-
-    /**
-     * @param string $name
-     * @param mixed  $value
-     */
-    public function setHeader($name, $value);
-
-    /**
-     * @param string $name
-     * @param mixed  $default
-     *
-     * @return mixed
-     */
-    public function getHeader($name, $default = null);
-
-    /**
-     * @param bool $redelivered
-     */
-    public function setRedelivered($redelivered);
+    public function setRedelivered(bool $redelivered): void;
 
     /**
      * Gets an indication of whether this message is being redelivered.
      * The message is considered as redelivered,
      * when it was sent by a broker to consumer but consumer does not ACK or REJECT it.
      * The broker brings the message back to the queue and mark it as redelivered.
-     *
-     * @return bool
      */
-    public function isRedelivered();
+    public function isRedelivered(): bool;
 
     /**
      * Sets the correlation ID for the message.
      * A client can use the correlation header field to link one message with another.
      * A typical use is to link a response message with its request message.
-     *
-     * @param string $correlationId the message ID of a message being referred to
-     *
-     * @throws Exception if the provider fails to set the correlation ID due to some internal error
      */
-    public function setCorrelationId($correlationId);
+    public function setCorrelationId(string $correlationId = null): void;
 
     /**
      * Gets the correlation ID for the message.
      * This method is used to return correlation ID values that are either provider-specific message IDs
      * or application-specific String values.
-     *
-     * @throws Exception if the provider fails to get the correlation ID due to some internal error
-     *
-     * @return string
      */
-    public function getCorrelationId();
+    public function getCorrelationId(): ?string;
 
     /**
      * Sets the message ID.
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
-     *
-     * @param string $messageId the ID of the message
-     *
-     * @throws Exception if the provider fails to set the message ID due to some internal error
      */
-    public function setMessageId($messageId);
+    public function setMessageId(string $messageId = null): void;
 
     /**
      * Gets the message Id.
      * The MessageId header field contains a value that uniquely identifies each message sent by a provider.
      *
      * When a message is sent, MessageId can be ignored.
-     *
-     * @throws Exception if the provider fails to get the message ID due to some internal error
-     *
-     * @return string
      */
-    public function getMessageId();
+    public function getMessageId(): ?string;
 
     /**
      * Gets the message timestamp.
      * The timestamp header field contains the time a message was handed off to a provider to be sent.
      * It is not the time the message was actually transmitted,
      * because the actual send may occur later due to transactions or other client-side queueing of messages.
-     *
-     * @return int
      */
-    public function getTimestamp();
+    public function getTimestamp(): ?int;
 
     /**
      * Sets the message timestamp.
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
-     *
-     * @param int $timestamp
-     *
-     * @throws Exception if the provider fails to set the timestamp due to some internal error
      */
-    public function setTimestamp($timestamp);
+    public function setTimestamp(int $timestamp = null): void;
 
     /**
      * Sets the destination to which a reply to this message should be sent.
@@ -164,15 +106,12 @@ interface PsrMessage
      * A message sent in response to a request is called a reply.
      * In some cases a client may wish to match a request it sent earlier with a reply it has just received.
      * The client can use the CorrelationID header field for this purpose.
-     *
-     * @param string|null $replyTo
+
      */
-    public function setReplyTo($replyTo);
+    public function setReplyTo(string $replyTo = null): void;
 
     /**
      * Gets the destination to which a reply to this message should be sent.
-     *
-     * @return string|null
      */
-    public function getReplyTo();
+    public function getReplyTo(): ?string;
 }

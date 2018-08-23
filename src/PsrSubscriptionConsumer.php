@@ -4,9 +4,10 @@ namespace Interop\Queue;
 interface PsrSubscriptionConsumer
 {
     /**
-     * @param float|int $timeout Milliseconds 1000 is 1 second, a zero is consume endlessly.
+     * The timeout is in milliseconds.
+     * Set zero to consume endlessly or till a consumer returns false.
      */
-    public function consume($timeout = 0);
+    public function consume(int $timeout = 0): void;
 
     /**
      * Notify broker that the client is interested in consuming messages from this queue.
@@ -16,25 +17,10 @@ interface PsrSubscriptionConsumer
      * and an optional second parameter the \Interop\Queue\PsrConsumer from which the message was
      * consumed. The consumer will not return the processing thread back to
      * the PHP script until the callback function returns FALSE.
-     *
-     * @param PsrConsumer $consumer
-     * @param callable     $callback
-     *
-     * @return void
      */
-    public function subscribe(PsrConsumer $consumer, callable $callback);
+    public function subscribe(PsrConsumer $consumer, callable $callback): void;
 
-    /**
-     * @param PsrConsumer $consumer
-     *
-     * @return void
-     */
-    public function unsubscribe(PsrConsumer $consumer);
+    public function unsubscribe(PsrConsumer $consumer): void;
 
-    /**
-     * Unsubscribe all subscribed consumers.
-     *
-     * @return void
-     */
-    public function unsubscribeAll();
+    public function unsubscribeAll(): void;
 }

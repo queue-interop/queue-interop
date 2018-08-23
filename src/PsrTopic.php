@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -13,8 +14,6 @@ interface PsrTopic extends PsrDestination
 {
     /**
      * Gets the name of this topic. This is a destination one sends messages to.
-     *
-     * @return string
      */
-    public function getTopicName();
+    public function getTopicName(): string;
 }

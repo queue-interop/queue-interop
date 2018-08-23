@@ -1,52 +1,38 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
 interface PsrContext
 {
-    /**
-     * @param string $body
-     * @param array  $properties
-     * @param array  $headers
-     *
-     * @return PsrMessage
-     */
-    public function createMessage($body = '', array $properties = [], array $headers = []);
+    public function createMessage(string $body = '', array $properties = [], array $headers = []): PsrMessage;
 
-    /**
-     * @param string $topicName
-     *
-     * @return PsrTopic
-     */
-    public function createTopic($topicName);
+    public function createTopic(string $topicName): PsrTopic;
 
-    /**
-     * @param string $queueName
-     *
-     * @return PsrQueue
-     */
-    public function createQueue($queueName);
+    public function createQueue(string $queueName): PsrQueue;
 
     /**
      * Create temporary queue.
      * The queue is visible by this connection only.
      * It will be deleted once the connection is closed.
      *
-     * @return PsrQueue
+     * @throws TemporaryQueueNotSupportedException
      */
-    public function createTemporaryQueue();
+    public function createTemporaryQueue(): PsrQueue;
+
+    public function createProducer(): PsrProducer;
+
+    public function createConsumer(PsrDestination $destination): PsrConsumer;
 
     /**
-     * @return PsrProducer
+     * @throws SubscriptionConsumerNotSupportedException
      */
-    public function createProducer();
+    public function createSubscriptionConsumer(): PsrSubscriptionConsumer;
 
     /**
-     * @param PsrDestination $destination
-     *
-     * @return PsrConsumer
+     * @throws PurgeQueueNotSupportedException
      */
-    public function createConsumer(PsrDestination $destination);
+    public function purgeQueue(PsrQueue $queue): void;
 
-    public function close();
+    public function close(): void;
 }

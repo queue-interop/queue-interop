@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Interop\Queue;
 
@@ -10,7 +11,7 @@ class InvalidDestinationException extends Exception
      *
      * @throws static
      */
-    public static function assertDestinationInstanceOf($destination, $class)
+    public static function assertDestinationInstanceOf($destination, string $class): void
     {
         if (!$destination instanceof $class) {
             throw new static(sprintf(
