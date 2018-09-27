@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ */
 interface PsrProducer
 {
     /**
@@ -68,3 +71,7 @@ interface PsrProducer
      */
     public function getTimeToLive(): ?int;
 }
+
+class_alias('Interop\Queue\PsrProducer', 'Interop\Queue\Producer', false);
+class_exists('Interop\Queue\PsrDestination');
+class_exists('Interop\Queue\PsrMessage');

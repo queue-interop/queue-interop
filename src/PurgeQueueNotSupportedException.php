@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class PurgeQueueNotSupportedException extends Exception
 {
     /**
@@ -16,3 +19,6 @@ class PurgeQueueNotSupportedException extends Exception
         return new static('The provider does not support purge queue.', $code, $previous);
     }
 }
+
+class_alias('Interop\Queue\PurgeQueueNotSupportedException', 'Interop\Queue\Exception\PurgeQueueNotSupportedException', false);
+class_exists('Interop\Queue\Exception');

@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class TimeToLiveNotSupportedException extends Exception
 {
     /**
@@ -16,3 +19,6 @@ class TimeToLiveNotSupportedException extends Exception
         return new static('The provider does not support time to live feature', $code, $previous);
     }
 }
+
+class_alias('Interop\Queue\TimeToLiveNotSupportedException', 'Interop\Queue\Exception\TimeToLiveNotSupportedException', false);
+class_exists('Interop\Queue\Exception');

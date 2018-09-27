@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class TemporaryQueueNotSupportedException extends Exception
 {
     /**
@@ -16,3 +19,6 @@ class TemporaryQueueNotSupportedException extends Exception
         return new static('The provider does not support temporary queue feature', $code, $previous);
     }
 }
+
+class_alias('Interop\Queue\TemporaryQueueNotSupportedException', 'Interop\Queue\Exception\TemporaryQueueNotSupportedException', false);
+class_exists('Interop\Queue\Exception');

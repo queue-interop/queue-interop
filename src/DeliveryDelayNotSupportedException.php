@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class DeliveryDelayNotSupportedException extends Exception
 {
     /**

@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Interop\Queue;
 
 /**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ *
  * A client uses a MessageConsumer object to receive messages from a destination.
  * A MessageConsumer object is created by passing a Destination object
  * to a message-consumer creation method supplied by a session.
@@ -41,3 +43,7 @@ interface PsrConsumer
      */
     public function reject(PsrMessage $message, bool $requeue = false): void;
 }
+
+class_alias('Interop\Queue\PsrConsumer', 'Interop\Queue\Consumer', false);
+class_exists('Interop\Queue\PsrQueue');
+class_exists('Interop\Queue\PsrMessage');
