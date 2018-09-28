@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Interop\Queue;
 
 /**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ *
  * A Destination object encapsulates a provider-specific address.
  * The transport API does not define a standard address syntax.
  * Although a standard address syntax was considered,
@@ -18,3 +20,5 @@ namespace Interop\Queue;
 interface PsrDestination
 {
 }
+
+class_alias('Interop\Queue\PsrDestination', 'Interop\Queue\Destination', false);

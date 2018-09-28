@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class DeliveryDelayNotSupportedException extends Exception
 {
     /**
@@ -16,3 +19,5 @@ class DeliveryDelayNotSupportedException extends Exception
         return new static('The provider does not support delivery delay feature', $code, $previous);
     }
 }
+
+class_alias('Interop\Queue\DeliveryDelayNotSupportedException', 'Interop\Queue\Exception\DeliveryDelayNotSupportedException', false);

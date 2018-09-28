@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one from Interop\Queue\Exception namespace.
+ */
 class InvalidDestinationException extends Exception
 {
     /**
@@ -22,3 +25,6 @@ class InvalidDestinationException extends Exception
         }
     }
 }
+
+class_alias('Interop\Queue\InvalidDestinationException', 'Interop\Queue\Exception\InvalidDestinationException', false);
+class_exists('Interop\Queue\Exception');

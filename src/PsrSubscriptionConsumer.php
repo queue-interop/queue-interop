@@ -1,6 +1,11 @@
 <?php
+declare(strict_types=1);
+
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ */
 interface PsrSubscriptionConsumer
 {
     /**
@@ -24,3 +29,7 @@ interface PsrSubscriptionConsumer
 
     public function unsubscribeAll(): void;
 }
+
+
+class_alias('Interop\Queue\PsrSubscriptionConsumer', 'Interop\Queue\SubscriptionConsumer', false);
+class_exists('Interop\Queue\PsrConsumer');

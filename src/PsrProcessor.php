@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ */
 interface PsrProcessor
 {
     /**
@@ -35,3 +38,7 @@ interface PsrProcessor
      */
     public function process(PsrMessage $message, PsrContext $context);
 }
+
+class_alias('Interop\Queue\PsrProcessor', 'Interop\Queue\Processor', false);
+class_exists('Interop\Queue\PsrContext');
+class_exists('Interop\Queue\PsrMessage');

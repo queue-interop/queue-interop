@@ -4,6 +4,8 @@ declare(strict_types=1);
 namespace Interop\Queue;
 
 /**
+ * @deprecated will be removed in later versions. use one without Psr prefix.
+ *
  * The Message interface is the root interface of all transport messages.
  * Most message-oriented middleware (MOM) products
  * treat messages as lightweight entities that consist of a header and a payload.
@@ -115,3 +117,5 @@ interface PsrMessage
      */
     public function getReplyTo(): ?string;
 }
+
+class_alias('Interop\Queue\PsrMessage', 'Interop\Queue\Message', false);
