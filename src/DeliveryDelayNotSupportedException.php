@@ -19,3 +19,5 @@ class DeliveryDelayNotSupportedException extends Exception
         return new static('The provider does not support delivery delay feature', $code, $previous);
     }
 }
+
+class_alias('Interop\Queue\DeliveryDelayNotSupportedException', 'Interop\Queue\Exception\DeliveryDelayNotSupportedException', false);
