@@ -3,10 +3,16 @@ declare(strict_types=1);
 
 namespace Interop\Queue\Exception;
 
-class_exists('Interop\Queue\TemporaryQueueNotSupportedException');
-
-if (\false) {
-    class TemporaryQueueNotSupportedException extends \Interop\Queue\TemporaryQueueNotSupportedException
+class TemporaryQueueNotSupportedException extends Exception
+{
+    /**
+     * @param int $code
+     * @param \Throwable $previous
+     *
+     * @return static
+     */
+    public static function providerDoestNotSupportIt(int $code = 0, \Throwable $previous = null): self
     {
+        return new static('The provider does not support temporary queue feature', $code, $previous);
     }
 }
