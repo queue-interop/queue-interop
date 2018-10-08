@@ -1,4 +1,4 @@
-# PHP7.1+ Queue Interoperability
+# Queue Interoperability
 
 [![Latest Stable Version](https://poser.pugx.org/queue-interop/queue-interop/v/stable.png)](https://packagist.org/packages/queue-interop/queue-interop)
 [![Monthly Downloads](https://poser.pugx.org/queue-interop/queue-interop/d/monthly)](https://packagist.org/packages/queue-interop/queue-interop)
