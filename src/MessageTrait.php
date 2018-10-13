@@ -1,5 +1,4 @@
 <?php
-
 declare(strict_types=1);
 
 namespace Interop\Queue;
@@ -9,11 +8,6 @@ namespace Interop\Queue;
  */
 trait MessageTrait
 {
-
-    /**
-     * @var string
-     */
-    private $id;
 
     /**
      * @var string
@@ -34,16 +28,6 @@ trait MessageTrait
      * @var array
      */
     private $headers;
-
-    public function setId(string $id = null): void
-    {
-        $this->id = $id;
-    }
-
-    public function getId(): ?string
-    {
-        return $this->id;
-    }
 
     public function getBody(): string
     {
