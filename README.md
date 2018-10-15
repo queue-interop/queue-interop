@@ -107,6 +107,7 @@ Find out more here:
 * [enqueue/dbal](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/dbal.md)
 * [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/filesystem.md)
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
+* [makasim/php-fpm-queue](https://github.com/makasim/php-fpm-queue)
 
 ## Amqp interop
 
