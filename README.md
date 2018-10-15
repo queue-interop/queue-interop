@@ -108,6 +108,7 @@ Find out more here:
 * [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/filesystem.md)
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
 * [makasim/php-fpm-queue](https://github.com/makasim/php-fpm-queue)
+* [makasim/rabbitmq-cli-consumer-client](https://github.com/makasim/rabbitmq-cli-consumer-client)
 
 ## Amqp interop
 
