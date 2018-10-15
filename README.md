@@ -96,6 +96,7 @@ Find out more here:
 * [enqueue/amqp-ext](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/amqp.md)
 * [enqueue/amqp-lib](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/amqp_lib.md)
 * [enqueue/amqp-bunny](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/amqp_bunny.md)
+* [makasim/rabbitmq-cli-consumer-client](https://github.com/makasim/rabbitmq-cli-consumer-client)
 * [enqueue/pheanstalk](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/pheanstalk.md)
 * [enqueue/stomp](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/stomp.md)
 * Amazon SQS [enqueue/sqs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/sqs.md)
@@ -108,7 +109,6 @@ Find out more here:
 * [enqueue/fs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/filesystem.md)
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
 * [makasim/php-fpm-queue](https://github.com/makasim/php-fpm-queue)
-* [makasim/rabbitmq-cli-consumer-client](https://github.com/makasim/rabbitmq-cli-consumer-client)
 
 ## Amqp interop
 
@@ -124,6 +124,7 @@ There is [AMQP interop](https://packagist.org/packages/queue-interop/amqp-intero
 * [enqueue/amqp-ext](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp.md)
 * [enqueue/amqp-lib](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp_lib.md)
 * [enqueue/amqp-bunny](https://github.com/php-enqueue/enqueue-dev/blob/master/docs/transport/amqp_bunny.md)
+* [makasim/rabbitmq-cli-consumer-client](https://github.com/makasim/rabbitmq-cli-consumer-client)
 
 ## Workflow
 
