@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Interop\Queue;
+namespace Interop\Queue\Impl;
 
 /**
  * The MessageTrait is a common implementation of the Message interface

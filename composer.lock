@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "e7cca4333477ebb7016e80ba84700131",
+    "content-hash": "7d749e1d9b9326ec9413073deba2c9a3",
     "packages": [],
     "packages-dev": [
         {
@@ -715,6 +715,40 @@
             "time": "2017-06-30T09:13:00+00:00"
         },
         {
+            "name": "queue-interop/queue-spec",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/queue-interop/queue-spec.git",
+                "reference": "0a8dae210db1362cd27e8ac6ef72914fda609827"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/queue-interop/queue-spec/zipball/0a8dae210db1362cd27e8ac6ef72914fda609827",
+                "reference": "0a8dae210db1362cd27e8ac6ef72914fda609827",
+                "shasum": ""
+            },
+            "require": {
+                "queue-interop/queue-interop": "0.7.x-dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.6.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Interop\\Queue\\Spec\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "time": "2018-09-28T12:20:50+00:00"
+        },
+        {
             "name": "sebastian/code-unit-reverse-lookup",
             "version": "1.0.1",
             "source": {
@@ -1397,7 +1431,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "queue-interop/queue-spec": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
