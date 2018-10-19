@@ -1,5 +1,5 @@
 <?php
-namespace Interop\Queue\Tests\Spec;
+namespace Interop\Queue\Tests\Impl;
 
 use Interop\Queue\Impl\ConsumerPollingTrait;
 use Interop\Queue\Message;
