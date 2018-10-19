@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Interop\Queue\Tests\Spec;
+namespace Interop\Queue\Tests\Impl;
 
 use Interop\Queue\Impl\ConsumerVisibilityTimeoutTrait;
 use PHPUnit\Framework\TestCase;
