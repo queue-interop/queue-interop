@@ -19,9 +19,10 @@ trait ConsumerPollingTrait
     /**
      * Set polling interval in milliseconds.
      */
-    public function setPollingInterval(int $msec): void
+    public function setPollingInterval(int $msec): self
     {
         $this->pollingInterval = $msec;
+        return $this;
     }
 
     /**
