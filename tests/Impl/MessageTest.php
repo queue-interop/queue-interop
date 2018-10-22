@@ -1,5 +1,7 @@
 <?php
-namespace Interop\Queue\Tests\Spec;
+declare(strict_types=1);
+
+namespace Interop\Queue\Tests\Impl;
 
 use Interop\Queue\Message;
 use Interop\Queue\Spec\MessageSpec;
