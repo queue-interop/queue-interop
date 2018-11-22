@@ -110,6 +110,7 @@ Find out more here:
 * [enqueue/null](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/null.md)
 * [enqueue/wamp](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/wamp.md)
 * [makasim/php-fpm-queue](https://github.com/makasim/php-fpm-queue)
+* [assoconnect/enqueue-azure](https://github.com/assoconnect/enqueue-azure)
 
 ## Amqp interop
 
