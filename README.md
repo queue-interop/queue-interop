@@ -16,18 +16,7 @@ applications and projects that use MQs can depend on the common interfaces inste
 implementations. This facilitates a high-level of interoperability and flexibility that allows users to consume
 *any* MQ transport implementation that can be adapted to these interfaces.
 
-The work done in this project is not officially endorsed by the [PHP-FIG](http://www.php-fig.org/). We adhere to the spirit and ideals of PHP-FIG, and hope
-this project will pave the way for one or more future PSRs.
-
-## Roadmap
-
-The Queue Interop project started in the summer of 2016, almost two years ago. Since then It has been well-tried by many developers. A lot of companies use it in production.
-
-It is time to settle a date of a stable release and possibly some intermediate steps towards it:
-
-* The 1.0 will be released in December 2018.
-* The 1.0-beta1 will be released in August 2018.
-* The [1.0-alpha1](https://github.com/queue-interop/queue-interop/releases/tag/1.0.0-alpha1) will be released in March 2018.
+The work done in this project is not officially endorsed by the [PHP-FIG](http://www.php-fig.org/). We adhere to the spirit and ideals of PHP-FIG.
 
 ## Installation
 
@@ -90,6 +79,7 @@ Find out more here:
 * [vladimir-yuldashev/laravel-queue-rabbitmq](https://packagist.org/packages/vladimir-yuldashev/laravel-queue-rabbitmq)
 * [sonata-project/notification-bundle](https://github.com/sonata-project/SonataNotificationBundle)
 * [yiisoft/yii2-queue](https://github.com/yiisoft/yii2-queue)
+* [queue-interop/ext](https://github.com/queue-interop/ext) - Queue Interop as PHP extension. Useful for Phalcon developers.
 
 ### Implementations
 
@@ -100,6 +90,8 @@ Find out more here:
 * [enqueue/pheanstalk](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/pheanstalk.md)
 * [enqueue/stomp](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/stomp.md)
 * Amazon SQS [enqueue/sqs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/sqs.md)
+* Amazon SNS [enqueue/sns](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/sns.md)
+* Amazon SNS\SQS [enqueue/sns](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/snsqs.md)
 * Google PubSub [enqueue/gps](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/gps.md)
 * [enqueue/rdkafka](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/kafka.md)
 * [enqueue/redis](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport/redis.md)
