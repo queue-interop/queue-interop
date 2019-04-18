@@ -124,15 +124,6 @@ There is [AMQP interop](https://packagist.org/packages/queue-interop/amqp-intero
 
 Everyone is welcome to join and contribute.
 
-The general workflow looks like this:
-
-1. Someone opens a discussion (GitHub issue) to suggest an interface
-1. Feedback is gathered
-1. The interface is added to a development branch
-1. We release alpha versions so that the interface can be experimented with
-1. Discussions and edits ensue until the interface is deemed stable by a general consensus
-1. A new minor version of the package is released
-
 We try to not break BC by creating new interfaces instead of editing existing ones.
 
 While we currently work on interfaces, we are open to anything that might help towards interoperability, may that
