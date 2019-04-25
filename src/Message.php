@@ -16,9 +16,9 @@ namespace Interop\Queue;
  */
 interface Message
 {
-    public function getBody(): string;
+    public function getBody();
 
-    public function setBody(string $body): void;
+    public function setBody($body): void;
 
     public function setProperties(array $properties): void;
 

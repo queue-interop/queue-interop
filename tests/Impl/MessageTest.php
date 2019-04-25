@@ -15,7 +15,7 @@ class MessageTest extends MessageSpec
         {
             use MessageTrait;
 
-            public function __construct(string $body = '', array $properties = [], array $headers = [])
+            public function __construct($body = '', array $properties = [], array $headers = [])
             {
                 $this->body = $body;
                 $this->properties = $properties;
