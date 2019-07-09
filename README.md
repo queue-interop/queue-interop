@@ -66,7 +66,7 @@ if ($message = $consumer->receive($timeout)) {
 Find out more here:
 
 * [Enqueue transport docs](https://github.com/php-enqueue/enqueue-dev/tree/master/docs/transport) contains a lot how to use example.
-* [Formapro's Blog](https://blog.forma-pro.com) contains varitety blog post about Queue Interop useage. 
+* [Formapro's Blog](https://blog.forma-pro.com) contains variety blog post about Queue Interop usage. 
 * [RabbitMQ's official tutorials](https://github.com/rabbitmq/rabbitmq-tutorials/tree/master/php-interop) ported to AMQP Interop.
 
 ## Compatible projects
