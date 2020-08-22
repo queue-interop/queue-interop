@@ -53,7 +53,7 @@ use Enqueue\Fs\FsConnectionFactory;
 
 $context = (new FsConnectionFactory())->createContext();
 
-$consumer = $consumer->createConsumer($context->createQueue('aQueue'));
+$consumer = $context->createConsumer($context->createQueue('aQueue'));
 
 $timeout = 5000; // 5sec
 if ($message = $consumer->receive($timeout)) {
