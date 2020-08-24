@@ -10,7 +10,7 @@ trait MessageTrait
 {
 
     /**
-     * @var string
+     * @var mixed
      */
     private $body;
 
@@ -29,12 +29,12 @@ trait MessageTrait
      */
     private $headers;
 
-    public function getBody(): string
+    public function getBody()
     {
         return $this->body;
     }
 
-    public function setBody(string $body): void
+    public function setBody($body): void
     {
         $this->body = $body;
     }
