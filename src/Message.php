@@ -24,22 +24,68 @@ interface Message
 
     /**
      * Returns [name => value, ...]
+     * @return array<string, mixed>
      */
     public function getProperties(): array;
 
+    /**
+     * Set property
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     */
     public function setProperty(string $name, $value): void;
 
+    /**
+     * Get property
+     *
+     * @param string $name
+     * @param mixed $default
+     * 
+     * @return mixed
+     *
+     * @template TDefault
+     * @psalm-param TDefault $default
+     * @psalm-return TDefault|mixed
+     */
     public function getProperty(string $name, $default = null);
 
+    /**
+     * Set headers
+     *
+     * @param array<string, mixed> $headers
+     * @return void
+     */
     public function setHeaders(array $headers): void;
 
     /**
      * Returns [name => value, ...]
+     * @return array<string, mixed>
      */
     public function getHeaders(): array;
 
+    /**
+     * Set header
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     */
     public function setHeader(string $name, $value): void;
 
+    /**
+     * Get header
+     *
+     * @param string $name
+     * @param mixed $default
+     * 
+     * @return mixed
+     *
+     * @template TDefault
+     * @psalm-param TDefault $default
+     * @psalm-return TDefault|mixed
+     */
     public function getHeader(string $name, $default = null);
 
     public function setRedelivered(bool $redelivered): void;
