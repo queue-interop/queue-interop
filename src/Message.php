@@ -20,6 +20,12 @@ interface Message
 
     public function setBody(string $body): void;
 
+    /**
+     * Set properties
+     *
+     * @param array<string, mixed> $properties
+     * @return void
+     */
     public function setProperties(array $properties): void;
 
     /**
