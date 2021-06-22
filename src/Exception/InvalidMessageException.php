@@ -11,6 +11,10 @@ class InvalidMessageException extends Exception
      * @param Message $message
      * @param string  $class
      *
+     * @template TClass as Message
+     * @psalm-param class-string<TClass> $class
+     * @psalm-assert TClass $message
+     *
      * @throws static
      */
     public static function assertMessageInstanceOf(Message $message, string $class): void
