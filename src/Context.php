@@ -9,6 +9,14 @@ use Interop\Queue\Exception\TemporaryQueueNotSupportedException;
 
 interface Context
 {
+    /**
+     * Create message
+     *
+     * @param string $body
+     * @param array<string, mixed> $properties
+     * @param array<string, mixed> $headers
+     * @return Message
+     */
     public function createMessage(string $body = '', array $properties = [], array $headers = []): Message;
 
     public function createTopic(string $topicName): Topic;
