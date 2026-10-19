@@ -9,7 +9,12 @@ class InvalidDestinationException extends Exception
      * @param mixed  $destination
      * @param string $class
      *
+     * @template TClass
+     * @psalm-param class-string<TClass> $class
+     * @psalm-assert TClass $destination
+     *
      * @throws static
+     * @psalm-pure
      */
     public static function assertDestinationInstanceOf($destination, string $class): void
     {

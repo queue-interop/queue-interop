@@ -13,35 +13,116 @@ namespace Interop\Queue;
  * Within this general form, the definition of a message varies significantly across products.
  *
  * @see https://docs.oracle.com/javaee/7/api/javax/jms/Message.html
+ * @psalm-purity-template P <= read-globals|write-globals|io
  */
 interface Message
 {
+    /**
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
+     */
     public function getBody(): string;
 
+    /**
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setBody(string $body): void;
 
+    /**
+     * Set properties
+     *
+     * @param array<string, mixed> $properties
+     * @return void
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setProperties(array $properties): void;
 
     /**
      * Returns [name => value, ...]
+     * @return array<string, mixed>
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getProperties(): array;
 
+    /**
+     * Set property
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setProperty(string $name, $value): void;
 
+    /**
+     * Get property
+     *
+     * @param string $name
+     * @param mixed $default
+     * 
+     * @return mixed
+     *
+     * @template TDefault
+     * @psalm-param TDefault $default
+     * @psalm-return TDefault|mixed
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
+     */
     public function getProperty(string $name, $default = null);
 
+    /**
+     * Set headers
+     *
+     * @param array<string, mixed> $headers
+     * @return void
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setHeaders(array $headers): void;
 
     /**
      * Returns [name => value, ...]
+     * @return array<string, mixed>
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getHeaders(): array;
 
+    /**
+     * Set header
+     *
+     * @param string $name
+     * @param mixed $value
+     * @return void
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setHeader(string $name, $value): void;
 
+    /**
+     * Get header
+     *
+     * @param string $name
+     * @param mixed $default
+     * 
+     * @return mixed
+     *
+     * @template TDefault
+     * @psalm-param TDefault $default
+     * @psalm-return TDefault|mixed
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
+     */
     public function getHeader(string $name, $default = null);
 
+    /**
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
+     */
     public function setRedelivered(bool $redelivered): void;
 
     /**
@@ -49,6 +130,8 @@ interface Message
      * The message is considered as redelivered,
      * when it was sent by a broker to consumer but consumer does not ACK or REJECT it.
      * The broker brings the message back to the queue and mark it as redelivered.
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function isRedelivered(): bool;
 
@@ -56,6 +139,8 @@ interface Message
      * Sets the correlation ID for the message.
      * A client can use the correlation header field to link one message with another.
      * A typical use is to link a response message with its request message.
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
      */
     public function setCorrelationId(?string $correlationId = null): void;
 
@@ -63,6 +148,8 @@ interface Message
      * Gets the correlation ID for the message.
      * This method is used to return correlation ID values that are either provider-specific message IDs
      * or application-specific String values.
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getCorrelationId(): ?string;
 
@@ -70,6 +157,8 @@ interface Message
      * Sets the message ID.
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
      */
     public function setMessageId(?string $messageId = null): void;
 
@@ -78,6 +167,8 @@ interface Message
      * The MessageId header field contains a value that uniquely identifies each message sent by a provider.
      *
      * When a message is sent, MessageId can be ignored.
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getMessageId(): ?string;
 
@@ -86,6 +177,8 @@ interface Message
      * The timestamp header field contains the time a message was handed off to a provider to be sent.
      * It is not the time the message was actually transmitted,
      * because the actual send may occur later due to transactions or other client-side queueing of messages.
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getTimestamp(): ?int;
 
@@ -93,6 +186,8 @@ interface Message
      * Sets the message timestamp.
      * Providers set this field when a message is sent.
      * This method can be used to change the value for a message that has been received.
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
      */
     public function setTimestamp(?int $timestamp = null): void;
 
@@ -107,11 +202,15 @@ interface Message
      * In some cases a client may wish to match a request it sent earlier with a reply it has just received.
      * The client can use the CorrelationID header field for this purpose.
 
+     * @psalm-capabilities read-props|write-this-props|write-refs
+     * @psalm-purity-from-template P
      */
     public function setReplyTo(?string $replyTo = null): void;
 
     /**
      * Gets the destination to which a reply to this message should be sent.
+     * @psalm-capabilities read-props
+     * @psalm-purity-from-template P
      */
     public function getReplyTo(): ?string;
 }

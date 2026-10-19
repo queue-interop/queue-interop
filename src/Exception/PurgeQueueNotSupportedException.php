@@ -10,6 +10,7 @@ class PurgeQueueNotSupportedException extends Exception
      * @param \Throwable|null $previous
      *
      * @return static
+     * @psalm-pure
      */
     public static function providerDoestNotSupportIt(int $code = 0, ?\Throwable $previous = null): self
     {

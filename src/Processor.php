@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace Interop\Queue;
 
+/**
+ * @psalm-purity-template P
+ */
 interface Processor
 {
     /**
@@ -32,6 +35,8 @@ interface Processor
      * @param Context $context
      *
      * @return string|object with __toString method implemented
+     * @psalm-pure
+     * @psalm-purity-from-template P
      */
     public function process(Message $message, Context $context);
 }
